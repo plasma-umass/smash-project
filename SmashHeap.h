@@ -22,6 +22,9 @@
 #define COLD_SET_THRESHOLD 100 //Threshold size of Cold Set per size class
 
 namespace SmashSTL {
+  //STL classes for Smash. You should use these instead of C++ default STL.
+  //These data structures uses their own heap for allocation, instead of malloc/free.
+  //You are free to add more C++ STL classes if needed.
   class InternalTopHeap : public HL::SizeHeap<HL::BumpAlloc<16384 * 1024, HL::MmapHeap, 16>> {
   private:
     typedef HL::SizeHeap<HL::BumpAlloc<16384 * 1024, HL::MmapHeap, 16>> SuperHeap;
@@ -62,7 +65,7 @@ namespace SmashSTL {
 class SmashHeap {
   public:
     SmashHeap () {
-
+      //Implement
     }
 
     void* malloc (size_t size) {
